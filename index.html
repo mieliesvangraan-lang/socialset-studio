@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SocialSet Studio — Professional Social Media Setup for Small Businesses</title>
+<meta name="description" content="SocialSet Studio sets up clean, professional Facebook & Instagram business pages for small businesses. Profile & cover design, bio writing, starter posts and a posting plan — done for you, no tech stress." />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#16335a;
+    --navy-deep:#0f2542;
+    --orange:#f26a1b;
+    --orange-soft:#ff8a3d;
+    --blue:#1d7fc4;
+    --ink:#1f2a37;
+    --muted:#5b6b7d;
+    --bg:#ffffff;
+    --bg-soft:#f5f8fc;
+    --line:#e6edf5;
+    --radius:18px;
+    --shadow:0 18px 40px -18px rgba(15,37,66,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,.brandfont{font-family:'Poppins',sans-serif;line-height:1.15}
+  a{text-decoration:none;color:inherit}
+  .wrap{width:min(1120px,92%);margin:0 auto}
+  .btn{display:inline-flex;align-items:center;gap:.55rem;font-family:'Poppins',sans-serif;font-weight:600;font-size:1rem;padding:.85rem 1.6rem;border-radius:999px;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;cursor:pointer;border:0}
+  .btn-primary{background:var(--orange);color:#fff;box-shadow:0 10px 24px -8px rgba(242,106,27,.6)}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--orange-soft)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+  .btn-ghost:hover{background:rgba(255,255,255,.12)}
+  .btn-navy{background:var(--navy);color:#fff;box-shadow:0 10px 24px -10px rgba(22,51,90,.6)}
+  .btn-navy:hover{transform:translateY(-2px);background:var(--navy-deep)}
+
+  /* NAV */
+  header.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0}
+  .logo{display:flex;align-items:center;gap:.6rem;font-family:'Poppins';font-weight:700;font-size:1.15rem;color:var(--navy)}
+  .logo img{height:38px;width:auto}
+  .logo span b{color:var(--orange)}
+  .nav-links{display:flex;align-items:center;gap:2rem}
+  .nav-links a{font-weight:500;color:var(--muted);font-size:.95rem}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-cta{padding:.6rem 1.2rem;font-size:.9rem}
+  .menu-btn{display:none;background:none;border:0;font-size:1.6rem;color:var(--navy);cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;overflow:hidden}
+  .hero::before,.hero::after{content:"";position:absolute;border-radius:50%;border:26px solid rgba(242,106,27,.16);}
+  .hero::before{width:340px;height:340px;top:-130px;left:-110px}
+  .hero::after{width:240px;height:240px;bottom:-120px;right:-60px;border-color:rgba(29,127,196,.18)}
+  .hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:1.1fr .9fr;gap:3rem;align-items:center;padding:5rem 0 5.5rem}
+  .pill{display:inline-block;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#dce8f6;font-size:.8rem;font-weight:600;letter-spacing:.4px;padding:.4rem .9rem;border-radius:999px;margin-bottom:1.2rem;text-transform:uppercase}
+  .hero h1{font-size:clamp(2.1rem,4.6vw,3.3rem);font-weight:800;margin-bottom:1.1rem}
+  .hero h1 em{font-style:normal;color:var(--orange-soft)}
+  .hero p.lead{font-size:1.15rem;color:#c7d6e8;max-width:34rem;margin-bottom:1.9rem}
+  .hero-cta{display:flex;gap:1rem;flex-wrap:wrap}
+  .hero-trust{margin-top:1.8rem;display:flex;gap:1.6rem;flex-wrap:wrap;color:#aebfd4;font-size:.9rem}
+  .hero-trust div{display:flex;align-items:center;gap:.5rem}
+  .hero-trust b{color:#fff}
+  .hero-trust svg{width:19px;height:19px;color:var(--orange-soft);flex:0 0 auto}
+  .hero-card{position:relative}
+  /* browser-style page mockup */
+  .mock{background:#fff;border-radius:16px;box-shadow:var(--shadow);overflow:hidden;border:1px solid rgba(255,255,255,.14)}
+  .mock-bar{display:flex;align-items:center;gap:.45rem;background:#eef2f7;padding:.6rem .9rem;border-bottom:1px solid #e2e9f1}
+  .mock-bar i{width:10px;height:10px;border-radius:50%;display:block}
+  .mock-bar i:nth-child(1){background:#ff5f57}.mock-bar i:nth-child(2){background:#febc2e}.mock-bar i:nth-child(3){background:#28c840}
+  .mock-url{flex:1;margin-left:.5rem;background:#fff;border:1px solid #e2e9f1;border-radius:999px;font-size:.68rem;color:#8a99ab;padding:.25rem .8rem;font-family:'Inter'}
+  .mock-cover{height:92px;background:linear-gradient(120deg,var(--navy) 0%,var(--blue) 70%,var(--orange) 130%);position:relative;overflow:hidden}
+  .mock-cover::before,.mock-cover::after{content:"";position:absolute;border-radius:50%;border:10px solid rgba(255,255,255,.14)}
+  .mock-cover::before{width:110px;height:110px;top:-46px;right:24px}
+  .mock-cover::after{width:70px;height:70px;bottom:-30px;left:34%;border-color:rgba(242,106,27,.45)}
+  .mock-head{display:flex;align-items:flex-end;gap:.9rem;padding:0 1.1rem;margin-top:-26px;position:relative}
+  .mock-avatar{width:58px;height:58px;border-radius:50%;border:3px solid #fff;background:#fff;box-shadow:0 4px 12px rgba(15,37,66,.18);display:grid;place-items:center;overflow:hidden}
+  .mock-avatar img{width:90%;height:90%;object-fit:contain}
+  .mock-id{padding-bottom:.2rem}
+  .mock-id b{font-family:'Poppins';font-size:.95rem;color:var(--navy);display:flex;align-items:center;gap:.3rem}
+  .mock-id b svg{width:14px;height:14px;color:var(--blue)}
+  .mock-id span{font-size:.72rem;color:var(--muted)}
+  .mock-stats{display:flex;gap:1.4rem;padding:.8rem 1.2rem .2rem;border-bottom:1px solid #eef2f7;margin:0 1.1rem}
+  .mock-stats div{text-align:center;padding-bottom:.55rem}
+  .mock-stats b{font-family:'Poppins';font-size:.92rem;color:var(--navy);display:block}
+  .mock-stats span{font-size:.66rem;color:var(--muted);letter-spacing:.3px;text-transform:uppercase}
+  .mock-posts{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem;padding:.9rem 1.1rem 1.1rem}
+  .mock-post{aspect-ratio:1;border-radius:9px}
+  .mock-post:nth-child(1){background:linear-gradient(135deg,var(--orange),var(--orange-soft))}
+  .mock-post:nth-child(2){background:linear-gradient(135deg,var(--navy),var(--blue))}
+  .mock-post:nth-child(3){background:linear-gradient(135deg,#e9eef5,#d7e2ee)}
+  .mock-post:nth-child(4){background:linear-gradient(135deg,var(--blue),#5fa9d8)}
+  .mock-post:nth-child(5){background:linear-gradient(135deg,#ffd9bd,var(--orange-soft))}
+  .mock-post:nth-child(6){background:linear-gradient(135deg,var(--navy-deep),var(--navy))}
+  /* floating chart card */
+  .float-chart{position:absolute;top:18px;right:-22px;background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:.85rem 1rem;width:158px;animation:bob 5s ease-in-out infinite}
+  .float-chart h5{font-family:'Poppins';font-size:.7rem;color:var(--muted);font-weight:600;margin-bottom:.45rem;letter-spacing:.3px;text-transform:uppercase}
+  .float-chart .bars{display:flex;align-items:flex-end;gap:.35rem;height:46px}
+  .float-chart .bars i{flex:1;border-radius:4px 4px 0 0;background:#e3ebf4}
+  .float-chart .bars i:nth-child(1){height:34%}.float-chart .bars i:nth-child(2){height:48%}
+  .float-chart .bars i:nth-child(3){height:42%}.float-chart .bars i:nth-child(4){height:64%}
+  .float-chart .bars i:nth-child(5){height:78%;background:linear-gradient(180deg,var(--orange-soft),var(--orange))}
+  .float-chart .bars i:nth-child(6){height:100%;background:linear-gradient(180deg,var(--orange-soft),var(--orange))}
+  .float-chart .delta{display:flex;align-items:center;gap:.3rem;margin-top:.5rem;font-family:'Poppins';font-weight:700;font-size:.78rem;color:#1d9e55}
+  .float-chart .delta svg{width:13px;height:13px}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+  @media(max-width:900px){.float-chart{right:0}}
+  .hero-badge{position:absolute;bottom:-18px;left:-18px;background:#fff;color:var(--navy);border-radius:14px;padding:.8rem 1.1rem;box-shadow:var(--shadow);display:flex;align-items:center;gap:.6rem;font-weight:600;font-size:.9rem}
+  .hero-badge .dot{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--orange),var(--orange-soft));display:grid;place-items:center;color:#fff;font-family:'Poppins';font-weight:700}
+
+  /* SECTION SHELL */
+  section{padding:4.8rem 0}
+  .eyebrow{color:var(--orange);font-weight:700;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:.6rem}
+  .sec-head{text-align:center;max-width:42rem;margin:0 auto 3rem}
+  .sec-head h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:700;color:var(--navy);margin-bottom:.7rem}
+  .sec-head p{color:var(--muted);font-size:1.05rem}
+
+  /* PROBLEM strip */
+  .strip{background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .strip-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  .strip-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.6rem;box-shadow:0 8px 22px -16px rgba(15,37,66,.3)}
+  .strip-card .ic{margin-bottom:.8rem;width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,rgba(242,106,27,.12),rgba(29,127,196,.1));display:grid;place-items:center}
+  .strip-card .ic svg{width:24px;height:24px;color:var(--orange)}
+  .strip-card h3{font-size:1.1rem;color:var(--navy);margin-bottom:.35rem}
+  .strip-card p{color:var(--muted);font-size:.96rem}
+
+  /* SERVICES */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1.4rem}
+  .card{display:flex;gap:1.1rem;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem;transition:transform .15s ease,box-shadow .15s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+  .card .icon{flex:0 0 52px;height:52px;border-radius:14px;background:linear-gradient(135deg,rgba(242,106,27,.12),rgba(29,127,196,.12));display:grid;place-items:center}
+  .card .icon svg{width:26px;height:26px;color:var(--navy)}
+  .card h3{font-size:1.15rem;color:var(--navy);margin-bottom:.3rem}
+  .card p{color:var(--muted);font-size:.97rem}
+
+  /* PRICING */
+  .pricing{background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%)}
+  .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
+  .price{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.7rem;display:flex;flex-direction:column;box-shadow:0 10px 26px -20px rgba(15,37,66,.4)}
+  .price.feat{border:2px solid var(--orange);box-shadow:var(--shadow);transform:scale(1.02)}
+  .price .tag{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:'Poppins';font-weight:600;font-size:.74rem;letter-spacing:.5px;padding:.3rem .9rem;border-radius:999px;text-transform:uppercase}
+  .price h3{font-family:'Poppins';color:var(--navy);font-size:1.25rem;margin-bottom:.2rem}
+  .price .sub{color:var(--muted);font-size:.88rem;margin-bottom:1rem;min-height:2.4rem}
+  .price .amt{font-family:'Poppins';font-weight:800;font-size:2.4rem;color:var(--navy);margin-bottom:.1rem}
+  .price .amt span{font-size:1rem;color:var(--muted);font-weight:500}
+  .price ul{list-style:none;margin:1.2rem 0 1.6rem;display:flex;flex-direction:column;gap:.6rem}
+  .price li{display:flex;gap:.55rem;font-size:.95rem;color:var(--ink)}
+  .price li::before{content:"✓";color:var(--orange);font-weight:800}
+  .price li.off{color:#aab6c4}
+  .price li.off::before{content:"–";color:#cdd6e0}
+  .price .btn{margin-top:auto;width:100%;justify-content:center}
+  .price-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:1.6rem}
+
+  /* PROCESS */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:step}
+  .step{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.7rem 1.4rem;text-align:center}
+  .step .num{counter-increment:step;width:46px;height:46px;margin:0 auto .8rem;border-radius:50%;background:var(--navy);color:#fff;font-family:'Poppins';font-weight:700;font-size:1.2rem;display:grid;place-items:center}
+  .step .num::before{content:counter(step)}
+  .step h3{font-size:1.05rem;color:var(--navy);margin-bottom:.3rem}
+  .step p{color:var(--muted);font-size:.92rem}
+
+  /* CTA */
+  .cta{background:linear-gradient(135deg,var(--orange) 0%,#e25a10 100%);color:#fff;text-align:center;border-radius:0}
+  .cta h2{font-size:clamp(1.7rem,3.4vw,2.5rem);font-weight:800;margin-bottom:.7rem}
+  .cta p{font-size:1.1rem;color:#fff;opacity:.92;max-width:34rem;margin:0 auto 1.8rem}
+  .cta .btn-navy{background:#fff;color:var(--orange)}
+  .cta .btn-navy:hover{background:#fff7f2}
+  .cta .btn-ghost{border-color:rgba(255,255,255,.7)}
+
+  /* FOOTER */
+  footer{background:var(--navy-deep);color:#aebfd4;padding:3rem 0 2rem}
+  .foot-grid{display:flex;justify-content:space-between;gap:2rem;flex-wrap:wrap;align-items:flex-start;margin-bottom:2rem}
+  .foot-brand{max-width:22rem}
+  .foot-brand .logo{color:#fff;margin-bottom:.7rem}
+  .foot-brand p{font-size:.95rem;color:#9fb1c8}
+  .foot-col h4{color:#fff;font-family:'Poppins';font-size:1rem;margin-bottom:.8rem}
+  .foot-col a{display:block;color:#9fb1c8;font-size:.94rem;margin-bottom:.5rem}
+  .foot-col a:hover{color:var(--orange-soft)}
+  .foot-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:1.4rem;text-align:center;font-size:.85rem;color:#7e92ab}
+
+  /* RESPONSIVE */
+  @media(max-width:900px){
+    .hero-grid{grid-template-columns:1fr;padding:3.5rem 0 4rem}
+    .hero-card{max-width:420px;margin:0 auto}
+    .strip-grid,.price-grid,.steps,.cards{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .price.feat{transform:none}
+    .nav-links{display:none}
+    .menu-btn{display:block}
+    .nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#fff;border-bottom:1px solid var(--line);padding:1rem 6%;gap:1rem;align-items:flex-start}
+  }
+  @media(max-width:560px){.steps{grid-template-columns:1fr}.hero-cta{flex-direction:column}.hero-cta .btn{width:100%;justify-content:center}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo"><img src="assets/logo.png" alt="SocialSet Studio logo" /><span>SocialSet<b>Studio</b></span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#process">How it works</a>
+      <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Get Started</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top" style="padding:0">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="pill">Facebook &amp; Instagram setup</span>
+      <h1>Make your small business look <em>professional</em> online.</h1>
+      <p class="lead">Empty page? Outdated photos? A bio that says nothing? I set up clean, trustworthy social media pages so customers take you seriously from the very first click — no tech stress, done for you.</p>
+      <div class="hero-cta">
+        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-primary">Get my page sorted →</a>
+        <a href="#pricing" class="btn btn-ghost">See packages</a>
+      </div>
+      <div class="hero-trust">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></svg><span><b>Done-for-you</b> setup</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span><b>Fast</b> turnaround</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg><span><b>Plain talk</b>, no tech-speak</span></div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="mock" role="img" aria-label="Preview of a professionally set up social media business page">
+        <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">facebook.com/yourbusiness</span></div>
+        <div class="mock-cover"></div>
+        <div class="mock-head">
+          <div class="mock-avatar"><svg viewBox="0 0 48 48" fill="none" style="width:74%;height:74%">
+            <circle cx="24" cy="24" r="21" fill="#16335a"/>
+            <path d="M14 17.5A4.5 4.5 0 0 1 18.5 13h11a4.5 4.5 0 0 1 4.5 4.5v8a4.5 4.5 0 0 1-4.5 4.5H21l-5.5 4.5V30A4.5 4.5 0 0 1 14 25.5v-8Z" fill="#fff"/>
+            <path d="M19.5 26v-4M24 26v-7M28.5 26v-5.2" stroke="#f26a1b" stroke-width="2.4" stroke-linecap="round"/>
+          </svg></div>
+          <div class="mock-id">
+            <b>Your Business <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a3 3 0 0 1 2.6 1.5 3 3 0 0 1 2.9.8 3 3 0 0 1 .8 2.9A3 3 0 0 1 19.8 10a3 3 0 0 1 0 4 3 3 0 0 1-1.5 2.8 3 3 0 0 1-.8 2.9 3 3 0 0 1-2.9.8A3 3 0 0 1 12 22a3 3 0 0 1-2.6-1.5 3 3 0 0 1-2.9-.8 3 3 0 0 1-.8-2.9A3 3 0 0 1 4.2 14a3 3 0 0 1 0-4 3 3 0 0 1 1.5-2.8 3 3 0 0 1 .8-2.9 3 3 0 0 1 2.9-.8A3 3 0 0 1 12 2Zm-1.2 13.6 5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3Z"/></svg></b>
+            <span>Set up &amp; styled by SocialSet Studio</span>
+          </div>
+        </div>
+        <div class="mock-stats">
+          <div><b>1.2k</b><span>Followers</span></div>
+          <div><b>4.9</b><span>Rating</span></div>
+          <div><b>24h</b><span>Replies</span></div>
+        </div>
+        <div class="mock-posts"><div class="mock-post"></div><div class="mock-post"></div><div class="mock-post"></div><div class="mock-post"></div><div class="mock-post"></div><div class="mock-post"></div></div>
+      </div>
+      <div class="float-chart">
+        <h5>Page growth</h5>
+        <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="delta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg> +218% reach</div>
+      </div>
+      <div class="hero-badge"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:18px;height:18px"><path d="m12 3 2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.8 6.7 19l1-5.8-4.2-4.1 5.9-.9L12 3Z"/></svg></span><div>Pages clients are<br/>proud to share</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM STRIP -->
+<section class="strip" style="padding:3.4rem 0">
+  <div class="wrap">
+    <div class="strip-grid">
+      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>People check you online first</h3><p>Most customers look at your social media before they ever call or buy. A blank page plants doubt.</p></div>
+      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 4 2.5 18a1.6 1.6 0 0 0 1.4 2.4h16.2a1.6 1.6 0 0 0 1.4-2.4L13.7 4a1.6 1.6 0 0 0-2.8 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div><h3>A messy page costs you trust</h3><p>Outdated photos and an empty bio make even a great business look uncertain and unprofessional.</p></div>
+      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>You don't have time for this</h3><p>Running a business is enough work. Setting up pages the right way is exactly what I take off your plate.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">What you get</div>
+      <h2>Everything your page needs, handled for you</h2>
+      <p>One simple package, set up properly the first time — so you just show up looking great.</p>
+    </div>
+    <div class="cards">
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></div><div><h3>Profile &amp; cover design</h3><p>Clean, on-brand profile picture and cover photo that make your page instantly look the part.</p></div></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><div><h3>A bio that tells your story</h3><p>Professionally written bio and About section so visitors know exactly who you are and why to trust you.</p></div></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg></div><div><h3>Ready-to-post content</h3><p>3–5 branded starter posts written and designed for you, so your page looks active from day one.</p></div></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div><h3>A simple posting plan</h3><p>An easy weekly plan telling you what to post and when — no guessing, no overwhelm.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Packages</div>
+      <h2>Simple, affordable pricing</h2>
+      <p>Pick the level that fits your business. Every package is done-for-you and stress-free.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price">
+        <h3>Basic</h3>
+        <p class="sub">Get your page looking professional, fast.</p>
+        <div class="amt">$20<span> once-off</span></div>
+        <ul>
+          <li>Profile &amp; cover design</li>
+          <li>Professionally written bio</li>
+          <li>1 starter post</li>
+          <li class="off">Starter posts pack</li>
+          <li class="off">Weekly content plan</li>
+        </ul>
+        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-navy">Choose Basic</a>
+      </div>
+      <div class="price feat">
+        <span class="tag">Most popular</span>
+        <h3>Standard</h3>
+        <p class="sub">The complete set-up most businesses need.</p>
+        <div class="amt">$45<span> once-off</span></div>
+        <ul>
+          <li>Profile &amp; cover design</li>
+          <li>Professionally written bio</li>
+          <li>3 branded starter posts</li>
+          <li>Weekly content plan</li>
+          <li class="off">Instagram + Facebook both</li>
+        </ul>
+        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-primary">Choose Standard</a>
+      </div>
+      <div class="price">
+        <h3>Premium</h3>
+        <p class="sub">Both platforms, fully launch-ready.</p>
+        <div class="amt">$75<span> once-off</span></div>
+        <ul>
+          <li>Everything in Standard</li>
+          <li>Facebook <b>and</b> Instagram setup</li>
+          <li>5 branded starter posts</li>
+          <li>Pages linked &amp; ready to grow</li>
+          <li>Priority delivery</li>
+        </ul>
+        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-navy">Choose Premium</a>
+      </div>
+    </div>
+    <p class="price-note">All packages are ordered securely through Fiverr — payment protected, satisfaction guaranteed.</p>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="strip" style="padding:4.4rem 0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How it works</div>
+      <h2>From empty page to professional in 4 steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num"></div><h3>Place your order</h3><p>Pick a package and send me a few quick details about your business.</p></div>
+      <div class="step"><div class="num"></div><h3>I build it</h3><p>I design your profile, cover, bio and posts — all in your brand.</p></div>
+      <div class="step"><div class="num"></div><h3>You review</h3><p>I send it over for your approval and tweak anything you'd like changed.</p></div>
+      <div class="step"><div class="num"></div><h3>Go live</h3><p>Your page is set up and ready — a page you'll be proud to share.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="wrap">
+    <h2>Ready to look the part online?</h2>
+    <p>Let's get your business a clean, professional page that turns visitors into customers. Simple, affordable, and completely done for you.</p>
+    <div class="hero-cta" style="justify-content:center">
+      <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-navy">Get started on Fiverr →</a>
+      <a href="mailto:mieliesvangraan@gmail.com" class="btn btn-ghost">Email me a question</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo"><img src="assets/logo.png" alt="SocialSet Studio" style="height:34px" /><span>SocialSet<b style="color:var(--orange)">Studio</b></span></a>
+        <p>Clean, professional Facebook &amp; Instagram pages for small businesses. No tech stress — done for you.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Explore</h4>
+        <a href="#services">Services</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">How it works</a>
+      </div>
+      <div class="foot-col">
+        <h4>Get in touch</h4>
+        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener">Order on Fiverr</a>
+        <a href="mailto:mieliesvangraan@gmail.com">Email me</a>
+      </div>
+    </div>
+    <div class="foot-bottom">© 2026 SocialSet Studio. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // mobile menu toggle
+  var mb=document.getElementById('menuBtn'),nl=document.getElementById('navLinks');
+  mb.addEventListener('click',function(){nl.classList.toggle('open')});
+  nl.addEventListener('click',function(e){if(e.target.tagName==='A')nl.classList.remove('open')});
+</script>
+</body>
+</html>
