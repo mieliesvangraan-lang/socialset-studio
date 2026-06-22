@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SocialSet Studio — Social Media, Done For You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#16335a; --navy-deep:#0f2542; --orange:#f26a1b; --orange-soft:#ff8a3d;
+    --blue:#1d7fc4; --ink:#1f2a37; --muted:#5b6b7d; --bg:#ffffff; --bg-soft:#f5f8fc;
+    --line:#e6edf5; --shadow:0 18px 40px -20px rgba(15,37,66,.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:#e9eef5;line-height:1.55;-webkit-font-smoothing:antialiased;padding:24px}
+  h1,h2,h3,h4,.brandfont{font-family:'Poppins',sans-serif;line-height:1.15}
+
+  /* PAGE SHEET (A4-ish) */
+  .sheet{width:210mm;max-width:100%;margin:0 auto 22px;background:#fff;box-shadow:var(--shadow);overflow:hidden;border-radius:6px}
+
+  /* HEADER */
+  .head{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);color:#fff;padding:26px 34px 30px;position:relative;overflow:hidden}
+  .head::before,.head::after{content:"";position:absolute;border-radius:50%;border:22px solid rgba(242,106,27,.16)}
+  .head::before{width:240px;height:240px;top:-120px;right:-70px}
+  .head::after{width:150px;height:150px;bottom:-90px;right:120px;border-color:rgba(29,127,196,.18)}
+  .brand{display:flex;align-items:center;gap:.7rem;position:relative;z-index:2}
+  .brand svg{width:42px;height:42px;flex:0 0 auto}
+  .brand .name{font-family:'Poppins';font-weight:700;font-size:1.25rem;letter-spacing:.2px}
+  .brand .name b{color:var(--orange-soft)}
+  .brand .tag{font-size:.72rem;color:#bcd0e8;letter-spacing:1.5px;text-transform:uppercase;margin-top:1px}
+  .head h1{position:relative;z-index:2;font-size:1.95rem;font-weight:800;margin-top:18px;max-width:18ch}
+  .head h1 em{font-style:normal;color:var(--orange-soft)}
+  .head p.sub{position:relative;z-index:2;color:#cfdcec;font-size:1rem;margin-top:8px;max-width:52ch}
+  .head .who{position:relative;z-index:2;display:inline-flex;align-items:center;gap:.5rem;margin-top:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:.4rem .95rem;font-size:.82rem;color:#e3eefb;font-weight:500}
+  .head .who svg{width:16px;height:16px;color:var(--orange-soft)}
+
+  .body{padding:26px 34px 30px}
+
+  /* WHAT YOU GET */
+  .eyebrow{color:var(--orange);font-weight:700;font-size:.72rem;letter-spacing:1.6px;text-transform:uppercase;margin-bottom:.55rem}
+  .get{display:grid;grid-template-columns:1fr 1fr;gap:.55rem 1.6rem;margin-bottom:6px}
+  .get .item{display:flex;gap:.6rem;align-items:flex-start;font-size:.9rem}
+  .get .item svg{width:18px;height:18px;color:#1d9e55;flex:0 0 auto;margin-top:2px}
+  .get .item b{color:var(--navy);font-family:'Poppins';font-weight:600}
+  .lead-note{background:var(--bg-soft);border-left:3px solid var(--orange);border-radius:0 8px 8px 0;padding:.7rem .95rem;font-size:.86rem;color:var(--muted);margin:14px 0 6px}
+  .lead-note b{color:var(--navy)}
+
+  /* PRICING */
+  .tiers{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:8px}
+  .tier{border:1.5px solid var(--line);border-radius:14px;padding:18px 16px 16px;position:relative;display:flex;flex-direction:column}
+  .tier.feat{border-color:var(--orange);box-shadow:0 12px 28px -16px rgba(242,106,27,.5)}
+  .tier .pop{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--orange);color:#fff;font-family:'Poppins';font-weight:600;font-size:.62rem;letter-spacing:.6px;text-transform:uppercase;padding:.25rem .7rem;border-radius:999px;white-space:nowrap}
+  .tier h3{font-size:1.02rem;color:var(--navy);font-weight:700}
+  .tier .price{font-family:'Poppins';font-weight:800;color:var(--navy);font-size:1.7rem;margin-top:4px;line-height:1}
+  .tier .price span{font-size:.78rem;color:var(--muted);font-weight:500}
+  .tier ul{list-style:none;margin-top:12px;display:flex;flex-direction:column;gap:.42rem}
+  .tier li{font-size:.82rem;display:flex;gap:.45rem;align-items:flex-start;color:var(--ink)}
+  .tier li svg{width:15px;height:15px;color:var(--orange);flex:0 0 auto;margin-top:2px}
+  .tier li.off{color:#aab6c4}
+  .tier li.off svg{color:#cdd6e0}
+
+  /* SETUP + TERMS */
+  .strip{display:grid;grid-template-columns:1.3fr 1fr;gap:14px;margin-top:18px}
+  .box{border-radius:12px;padding:15px 17px}
+  .box.navy{background:var(--navy);color:#fff}
+  .box.navy h4{font-size:.95rem;color:#fff;display:flex;align-items:center;gap:.5rem}
+  .box.navy h4 svg{width:18px;height:18px;color:var(--orange-soft)}
+  .box.navy p{font-size:.83rem;color:#cfdcec;margin-top:6px}
+  .box.navy .deal{margin-top:9px;background:rgba(242,106,27,.16);border:1px solid rgba(255,138,61,.4);border-radius:8px;padding:.5rem .7rem;font-size:.8rem;color:#ffd9bd;font-weight:500}
+  .box.navy .deal b{color:#fff}
+  .box.soft{background:var(--bg-soft);border:1px solid var(--line)}
+  .box.soft h4{font-size:.95rem;color:var(--navy);display:flex;align-items:center;gap:.5rem}
+  .box.soft h4 svg{width:18px;height:18px;color:var(--orange)}
+  .box.soft ul{list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:.35rem}
+  .box.soft li{font-size:.82rem;color:var(--muted);display:flex;gap:.45rem;align-items:flex-start}
+  .box.soft li svg{width:14px;height:14px;color:#1d9e55;flex:0 0 auto;margin-top:2px}
+
+  /* CTA FOOTER */
+  .cta{margin-top:20px;background:linear-gradient(135deg,var(--orange) 0%,var(--orange-soft) 100%);border-radius:14px;padding:18px 22px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .cta .txt h4{color:#fff;font-size:1.1rem;font-weight:700}
+  .cta .txt p{color:#fff;opacity:.92;font-size:.85rem;margin-top:2px}
+  .cta .contact{display:flex;flex-direction:column;gap:.3rem;align-items:flex-end}
+  .cta .contact a,.cta .contact span{color:#fff;font-family:'Poppins';font-weight:600;font-size:.9rem;display:flex;align-items:center;gap:.45rem;text-decoration:none}
+  .cta .contact svg{width:16px;height:16px}
+
+  @media print{
+    body{background:#fff;padding:0}
+    .sheet{box-shadow:none;border-radius:0;margin:0;width:100%}
+    @page{size:A4;margin:10mm}
+  }
+  @media(max-width:680px){
+    .tiers{grid-template-columns:1fr}
+    .get,.strip{grid-template-columns:1fr}
+    .cta{flex-direction:column;align-items:flex-start}
+    .cta .contact{align-items:flex-start}
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- HEADER -->
+  <div class="head">
+    <div class="brand">
+      <svg viewBox="0 0 48 48" fill="none">
+        <circle cx="24" cy="24" r="22" fill="#ffffff" opacity=".12"/>
+        <circle cx="24" cy="24" r="17" fill="#fff"/>
+        <path d="M16 19.5A3.5 3.5 0 0 1 19.5 16h9a3.5 3.5 0 0 1 3.5 3.5v6a3.5 3.5 0 0 1-3.5 3.5H21l-4.5 3.5V29A3.5 3.5 0 0 1 16 25.5v-6Z" fill="#16335a"/>
+        <path d="M20.5 25v-3M24 25v-5.5M27.5 25v-4" stroke="#f26a1b" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <div>
+        <div class="name">SocialSet<b>Studio</b></div>
+        <div class="tag">Social media, done for you</div>
+      </div>
+    </div>
+
+    <h1>Your social media, <em>handled</em> — so you can stay on the tools.</h1>
+    <p class="sub">Professional, lead-focused Facebook, Instagram &amp; Google posts for your business — written, designed, and posted for you every month. You do nothing.</p>
+    <span class="who"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 7h2a4 4 0 0 1 4 4v6M6 21V7a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14"/><path d="M3 21h18"/></svg> Built for home-service businesses — plumbers, electricians, roofers, HVAC, landscapers &amp; contractors</span>
+  </div>
+
+  <div class="body">
+
+    <!-- WHAT YOU GET -->
+    <div class="eyebrow">What's done for you, every month</div>
+    <div class="get">
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></svg><span><b>Posts written for you</b> — captions in your voice, no effort from you</span></div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></svg><span><b>Branded graphics</b> — clean, professional images in your colours</span></div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></svg><span><b>Scheduled &amp; posted</b> automatically — you never lift a finger</span></div>
+      <div class="item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></svg><span><b>Content that wins work</b> — before/afters, reviews, offers, FAQs</span></div>
+    </div>
+
+    <div class="lead-note">
+      <b>Why it matters:</b> your customers check you online before they call. A steady, professional feed turns "looks legit" into booked jobs — without you spending a single evening on it.
+    </div>
+
+    <!-- PRICING -->
+    <div class="eyebrow" style="margin-top:16px">Simple monthly plans — cancel anytime</div>
+    <div class="tiers">
+
+      <div class="tier">
+        <h3>Starter</h3>
+        <div class="price">$200<span>/month</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>8 posts</b> per month</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> 1 platform (Facebook <i>or</i> Instagram)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Captions + branded graphics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Auto-scheduled &amp; posted</li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Monthly report</li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Google Business posts</li>
+        </ul>
+      </div>
+
+      <div class="tier feat">
+        <span class="pop">★ Most popular</span>
+        <h3>Growth</h3>
+        <div class="price">$350<span>/month</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>16 posts</b> per month</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Facebook <b>+</b> Instagram</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Captions + branded graphics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Auto-scheduled &amp; posted</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>Monthly performance report</b></li>
+          <li class="off"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg> Google Business posts</li>
+        </ul>
+      </div>
+
+      <div class="tier">
+        <h3>Pro</h3>
+        <div class="price">$600<span>/month</span></div>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>24 posts</b> per month</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> FB + Instagram + <b>Google Business</b></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Captions + branded graphics</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Auto-scheduled &amp; posted</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Monthly performance report</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> <b>Review &amp; lead-booster posts</b></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- SETUP + TERMS -->
+    <div class="strip">
+      <div class="box navy">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.2 2.5a2 2 0 0 0-.4 0L4 6v6c0 5 3.4 8.5 8 9.5 4.6-1 8-4.5 8-9.5V6l-7.8-3.5Z"/><path d="m9 12 2 2 4-4"/></svg> One-time setup — $150</h4>
+        <p>Before your posts start, I rebuild your pages properly: profile + cover design, a bio written to win customers, your branding/templates, and your first batch of content ready to go.</p>
+        <div class="deal"><b>Setup fee waived</b> when you sign up for 3 months — start for just your first month's plan.</div>
+      </div>
+      <div class="box soft">
+        <h4><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg> No stress, no lock-in</h4>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Cancel anytime — no long contracts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> You approve the plan before anything posts</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Plain talk, quick replies, zero tech-speak</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta">
+      <div class="txt">
+        <h4>Let's fill your feed with work-winning posts.</h4>
+        <p>Reply to this message or get in touch — I'll have your first posts ready within days.</p>
+      </div>
+      <div class="contact">
+        <a href="mailto:mieliesvangraan@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg> mieliesvangraan@gmail.com</a>
+        <a href="https://mieliesvangraan-lang.github.io/socialset-studio/"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18 15 15 0 0 1 0-18Z"/></svg> Visit our website</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
