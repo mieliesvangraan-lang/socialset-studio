@@ -35,60 +35,58 @@
   .ig .dots{margin-left:auto;color:#9aa7b5;font-size:1.2rem;letter-spacing:1px}
 
   /* SQUARE CANVAS */
-  .sq{position:relative;aspect-ratio:1;overflow:hidden}
-  .sq .wm{position:absolute;bottom:10px;right:12px;z-index:6;font-family:'Poppins';font-weight:600;font-size:.6rem;color:rgba(255,255,255,.85);letter-spacing:.5px;display:flex;align-items:center;gap:.3rem}
+  .sq{position:relative;aspect-ratio:1;overflow:hidden;background:#0f2542}
+  .sq .photo{position:absolute;inset:0;background-size:cover;background-position:center}
+  .sq .wm{position:absolute;bottom:10px;right:12px;z-index:6;font-family:'Poppins';font-weight:600;font-size:.62rem;color:rgba(255,255,255,.92);letter-spacing:.5px;display:flex;align-items:center;gap:.3rem;text-shadow:0 1px 4px rgba(0,0,0,.5)}
   .sq .wm svg{width:13px;height:13px}
 
-  /* --- POST 1: BEFORE / AFTER --- */
-  .ba{display:grid;grid-template-columns:1fr 1fr;height:100%}
-  .ba .half{position:relative;display:grid;place-items:center;overflow:hidden}
-  .ba .before{background:linear-gradient(160deg,#5c5346,#3a342b)}
-  .ba .after{background:linear-gradient(160deg,var(--blue),var(--navy))}
-  .ba .pipe{width:62%;height:62%;border-radius:14px;border:3px dashed rgba(255,255,255,.35);display:grid;place-items:center}
-  .ba .before .pipe{border-color:rgba(255,180,120,.4);background:repeating-linear-gradient(45deg,rgba(0,0,0,.18) 0 8px,transparent 8px 16px)}
-  .ba .after .pipe{border-style:solid;border-color:rgba(255,255,255,.45);background:rgba(255,255,255,.08)}
-  .ba .pipe svg{width:42px;height:42px}
-  .ba .lbl{position:absolute;top:12px;left:12px;font-family:'Poppins';font-weight:800;font-size:.72rem;letter-spacing:1.2px;color:#fff;background:rgba(0,0,0,.4);padding:.25rem .6rem;border-radius:6px}
-  .ba .after .lbl{background:var(--orange)}
-  .ba .mid{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:5;width:46px;height:46px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 6px 18px rgba(0,0,0,.3);font-family:'Poppins';font-weight:800;color:var(--orange);font-size:.7rem}
-  .ba-cap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(0deg,rgba(15,37,66,.92),transparent);padding:42px 16px 16px;z-index:4}
-  .ba-cap b{display:block;font-family:'Poppins';font-weight:700;color:#fff;font-size:1.05rem;line-height:1.2}
-  .ba-cap span{color:var(--orange-soft);font-weight:600;font-size:.78rem}
+  /* POST 1: JOB DONE (full-bleed photo + overlay) */
+  .p1 .photo{filter:saturate(1.05)}
+  .p1 .scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,37,66,.92) 0%,rgba(15,37,66,.15) 45%,rgba(15,37,66,.35) 100%)}
+  .badge{position:absolute;top:16px;left:16px;z-index:5;display:inline-flex;align-items:center;gap:.4rem;background:var(--orange);color:#fff;font-family:'Poppins';font-weight:700;font-size:.72rem;letter-spacing:.8px;text-transform:uppercase;padding:.4rem .8rem;border-radius:8px;box-shadow:0 6px 16px rgba(242,106,27,.45)}
+  .badge svg{width:15px;height:15px}
+  .p1 .cap-over{position:absolute;left:18px;right:18px;bottom:42px;z-index:5}
+  .p1 .cap-over b{display:block;font-family:'Poppins';font-weight:800;color:#fff;font-size:1.55rem;line-height:1.12;text-shadow:0 2px 10px rgba(0,0,0,.4)}
+  .p1 .cap-over span{display:inline-block;margin-top:8px;color:var(--orange-soft);font-family:'Poppins';font-weight:600;font-size:.82rem}
 
-  /* --- POST 2: REVIEW --- */
-  .rev{height:100%;background:linear-gradient(150deg,var(--navy) 0%,var(--navy-deep) 100%);position:relative;display:flex;flex-direction:column;justify-content:center;padding:34px 30px;overflow:hidden}
-  .rev::before{content:"";position:absolute;width:200px;height:200px;border-radius:50%;border:24px solid rgba(242,106,27,.16);top:-90px;right:-70px}
-  .rev .quote{position:absolute;top:18px;left:24px;font-family:'Poppins';font-weight:900;font-size:5rem;color:rgba(242,106,27,.35);line-height:1}
-  .rev .stars{display:flex;gap:.2rem;position:relative;z-index:2;margin-bottom:12px}
-  .rev .stars svg{width:24px;height:24px;color:var(--orange-soft)}
-  .rev p{position:relative;z-index:2;color:#fff;font-family:'Poppins';font-weight:600;font-size:1.18rem;line-height:1.4}
-  .rev .who{position:relative;z-index:2;margin-top:18px;display:flex;align-items:center;gap:.6rem}
-  .rev .who .c{width:36px;height:36px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-family:'Poppins';font-weight:700;color:#fff;font-size:.85rem}
-  .rev .who b{color:#fff;font-family:'Poppins';font-size:.85rem;display:block}
-  .rev .who span{color:#aebfd4;font-size:.72rem}
+  /* POST 2: REVIEW (photo + heavy navy overlay) */
+  .p2 .photo{filter:saturate(.9)}
+  .p2 .scrim{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,37,66,.94) 0%,rgba(22,51,90,.86) 55%,rgba(29,127,196,.7) 100%)}
+  .p2 .inner{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;padding:34px 30px}
+  .p2 .quote{position:absolute;top:14px;left:24px;font-family:'Poppins';font-weight:900;font-size:5rem;color:rgba(242,106,27,.45);line-height:1}
+  .p2 .stars{display:flex;gap:.2rem;margin-bottom:12px}
+  .p2 .stars svg{width:24px;height:24px;color:var(--orange-soft)}
+  .p2 p{color:#fff;font-family:'Poppins';font-weight:600;font-size:1.16rem;line-height:1.4;text-shadow:0 1px 6px rgba(0,0,0,.3)}
+  .p2 .who{margin-top:18px;display:flex;align-items:center;gap:.6rem}
+  .p2 .who .c{width:36px;height:36px;border-radius:50%;background:var(--orange);display:grid;place-items:center;font-family:'Poppins';font-weight:700;color:#fff;font-size:.85rem}
+  .p2 .who b{color:#fff;font-family:'Poppins';font-size:.85rem;display:block}
+  .p2 .who span{color:#cdddee;font-size:.72rem}
 
-  /* --- POST 3: TIP LIST --- */
-  .tip{height:100%;background:var(--bg-soft);position:relative;display:flex;flex-direction:column;padding:28px 28px 24px}
-  .tip .top{background:var(--orange);color:#fff;align-self:flex-start;font-family:'Poppins';font-weight:700;font-size:.72rem;letter-spacing:1px;text-transform:uppercase;padding:.3rem .75rem;border-radius:6px}
-  .tip h3{font-family:'Poppins';font-weight:800;color:var(--navy);font-size:1.45rem;line-height:1.15;margin-top:14px}
-  .tip h3 em{font-style:normal;color:var(--orange)}
-  .tip ul{list-style:none;margin-top:18px;display:flex;flex-direction:column;gap:13px}
-  .tip li{display:flex;gap:.7rem;align-items:flex-start}
-  .tip li .n{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--navy);color:#fff;font-family:'Poppins';font-weight:700;font-size:.82rem;display:grid;place-items:center}
-  .tip li span{font-size:.92rem;color:var(--ink);font-weight:500;padding-top:2px}
-  .tip .ft{margin-top:auto;padding-top:16px;font-family:'Poppins';font-weight:600;color:var(--navy);font-size:.82rem;display:flex;align-items:center;gap:.4rem}
-  .tip .ft svg{width:16px;height:16px;color:var(--orange)}
+  /* POST 3: TIP (photo header + content panel) */
+  .p3{display:flex;flex-direction:column}
+  .p3 .top{position:relative;height:46%;overflow:hidden}
+  .p3 .top .photo{position:absolute;inset:0;background-size:cover;background-position:center}
+  .p3 .top .scrim{position:absolute;inset:0;background:linear-gradient(0deg,rgba(15,37,66,.6),rgba(15,37,66,.1))}
+  .p3 .top .pill{position:absolute;top:14px;left:14px;background:var(--orange);color:#fff;font-family:'Poppins';font-weight:700;font-size:.7rem;letter-spacing:1px;text-transform:uppercase;padding:.3rem .75rem;border-radius:6px}
+  .p3 .top h3{position:absolute;left:16px;right:16px;bottom:14px;font-family:'Poppins';font-weight:800;color:#fff;font-size:1.3rem;line-height:1.15;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+  .p3 .top h3 em{font-style:normal;color:var(--orange-soft)}
+  .p3 .body3{flex:1;background:#fff;padding:18px 22px 16px;display:flex;flex-direction:column}
+  .p3 ul{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .p3 li{display:flex;gap:.7rem;align-items:flex-start}
+  .p3 li .n{flex:0 0 auto;width:26px;height:26px;border-radius:8px;background:var(--navy);color:#fff;font-family:'Poppins';font-weight:700;font-size:.82rem;display:grid;place-items:center}
+  .p3 li span{font-size:.9rem;color:var(--ink);font-weight:500;padding-top:2px}
+  .p3 .ft{margin-top:auto;padding-top:13px;font-family:'Poppins';font-weight:600;color:var(--navy);font-size:.82rem;display:flex;align-items:center;gap:.4rem}
+  .p3 .ft svg{width:16px;height:16px;color:var(--orange)}
 
-  /* --- POST 4: OFFER --- */
-  .off{height:100%;position:relative;background:linear-gradient(135deg,var(--orange) 0%,var(--orange-soft) 100%);display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px;overflow:hidden}
-  .off::before,.off::after{content:"";position:absolute;border-radius:50%;border:22px solid rgba(255,255,255,.18)}
-  .off::before{width:200px;height:200px;top:-90px;left:-70px}
-  .off::after{width:140px;height:140px;bottom:-70px;right:-40px}
-  .off .tagtop{position:relative;z-index:2;color:#fff;font-family:'Poppins';font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:.78rem}
-  .off .big{position:relative;z-index:2;font-family:'Poppins';font-weight:900;color:#fff;font-size:3.2rem;line-height:.95;margin:10px 0;text-shadow:0 4px 16px rgba(0,0,0,.18)}
-  .off .big small{display:block;font-size:1.15rem;font-weight:700;letter-spacing:1px}
-  .off .desc{position:relative;z-index:2;color:#fff;font-size:.95rem;max-width:24ch;font-weight:500}
-  .off .pill{position:relative;z-index:2;margin-top:18px;background:#fff;color:var(--orange);font-family:'Poppins';font-weight:700;font-size:.9rem;padding:.6rem 1.4rem;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.18)}
+  /* POST 4: OFFER (photo + orange overlay) */
+  .p4 .photo{filter:saturate(1.05)}
+  .p4 .scrim{position:absolute;inset:0;background:linear-gradient(135deg,rgba(242,106,27,.92) 0%,rgba(255,138,61,.82) 60%,rgba(242,106,27,.7) 100%)}
+  .p4 .inner{position:absolute;inset:0;z-index:5;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px}
+  .p4 .tagtop{color:#fff;font-family:'Poppins';font-weight:600;letter-spacing:2px;text-transform:uppercase;font-size:.78rem;text-shadow:0 1px 4px rgba(0,0,0,.2)}
+  .p4 .big{font-family:'Poppins';font-weight:900;color:#fff;font-size:3.1rem;line-height:.95;margin:10px 0;text-shadow:0 4px 16px rgba(0,0,0,.28)}
+  .p4 .big small{display:block;font-size:1.1rem;font-weight:700;letter-spacing:1px}
+  .p4 .desc{color:#fff;font-size:.92rem;max-width:24ch;font-weight:500;text-shadow:0 1px 6px rgba(0,0,0,.2)}
+  .p4 .pillbtn{margin-top:18px;background:#fff;color:var(--orange);font-family:'Poppins';font-weight:700;font-size:.9rem;padding:.6rem 1.4rem;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.22)}
 
   /* CAPTION BLOCK */
   .cap{padding:.55rem .9rem 1rem}
@@ -114,34 +112,26 @@
   <div class="page-head">
     <div class="kick">SocialSet Studio · Sample Work</div>
     <h1>The kind of posts I'll create for your business</h1>
-    <p>Every plan includes posts like these — designed in your brand colours and written to win you work. Here are four real examples for a plumbing business.</p>
-    <div class="demo">★ Sample work for a demo business — yours will use your name, logo &amp; colours</div>
+    <p>Real photos, your brand colours, and words that win you work — designed and posted for you every month. Here are four examples for a plumbing business.</p>
+    <div class="demo">★ Sample work for a demo business — yours will use your own photos, logo &amp; colours</div>
   </div>
 
   <div class="grid">
 
-    <!-- POST 1: BEFORE/AFTER -->
+    <!-- POST 1: JOB DONE -->
     <div class="post">
       <div class="ig">
         <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="#f26a1b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s7-5.6 7-12a7 7 0 1 0-14 0c0 6.4 7 12 7 12Z"/><circle cx="12" cy="10" r="2.4"/></svg></div>
         <div class="nm">Riverton Plumbing Co.<span>Sponsored</span></div>
         <div class="dots">···</div>
       </div>
-      <div class="sq">
-        <div class="ba">
-          <div class="half before">
-            <span class="lbl">BEFORE</span>
-            <div class="pipe"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,200,150,.7)" stroke-width="1.8" stroke-linecap="round"><path d="M4 7h6v4H4zM14 13h6v4h-6zM10 9h4v0M12 9v4"/></svg></div>
-          </div>
-          <div class="half after">
-            <span class="lbl">AFTER</span>
-            <div class="pipe"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,.9)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 11 3 3L22 4"/><path d="M21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h11"/></svg></div>
-          </div>
-          <div class="mid">VS</div>
-        </div>
-        <div class="ba-cap">
-          <b>Blocked drain — sorted same day.</b>
-          <span>Booked at 9am · flowing by noon</span>
+      <div class="sq p1">
+        <div class="photo" style="background-image:url('https://images.pexels.com/photos/6419128/pexels-photo-6419128.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1080')"></div>
+        <div class="scrim"></div>
+        <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg> Job done</div>
+        <div class="cap-over">
+          <b>Another leak sorted — same day.</b>
+          <span>Booked at 9am · fixed by noon ✅</span>
         </div>
         <div class="wm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-5.6 7-12a7 7 0 1 0-14 0c0 6.4 7 12 7 12Z"/></svg> Riverton Plumbing</div>
       </div>
@@ -153,9 +143,9 @@
           <svg class="sp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
         </div>
         <div class="likes">128 likes</div>
-        <div class="txt"><b>rivertonplumbing</b> Another happy customer! 🚿 This kitchen drain was completely blocked — we had it cleared and flowing the same day. No mess left behind. <b>Got a slow or blocked drain?</b> Tap the button to book — we'll get you sorted fast. 📞</div>
-        <div class="tags">#plumbing #blockeddrain #localplumber #samedayservice</div>
-        <div class="note"><b>Why this works:</b> before/after shots are the #1 trust-builder for trades — people can <i>see</i> the result, and it quietly says "we show up and finish the job."</div>
+        <div class="txt"><b>rivertonplumbing</b> Another happy customer! 🔧 This one was booked first thing and sorted before lunch — no mess left behind. <b>Got a leak or blocked drain?</b> Tap the button to book — we'll get you sorted fast. 📞</div>
+        <div class="tags">#plumbing #emergencyplumber #localplumber #samedayservice</div>
+        <div class="note"><b>Why this works:</b> a real on-the-job photo + "same day" builds instant trust — it shows you turn up and get it done.</div>
       </div>
     </div>
 
@@ -166,8 +156,10 @@
         <div class="nm">Riverton Plumbing Co.<span>Sponsored</span></div>
         <div class="dots">···</div>
       </div>
-      <div class="sq">
-        <div class="rev">
+      <div class="sq p2">
+        <div class="photo" style="background-image:url('https://images.pexels.com/photos/6720550/pexels-photo-6720550.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1080')"></div>
+        <div class="scrim"></div>
+        <div class="inner">
           <div class="quote">&ldquo;</div>
           <div class="stars">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8 6.8 19l1-5.8L3.5 9.2l5.9-.9L12 3Z"/></svg>
@@ -176,7 +168,7 @@
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8 6.8 19l1-5.8L3.5 9.2l5.9-.9L12 3Z"/></svg>
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="m12 3 2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.8 6.8 19l1-5.8L3.5 9.2l5.9-.9L12 3Z"/></svg>
           </div>
-          <p>"Turned up on time, fixed our burst pipe in under an hour and left the place spotless. Honestly the easiest tradesperson I've ever dealt with."</p>
+          <p>"Turned up on time, fixed our burst pipe in under an hour and left the place spotless. Easiest tradesperson I've ever dealt with."</p>
           <div class="who"><div class="c">SM</div><div><b>Sarah M.</b><span>Riverton · Verified customer</span></div></div>
         </div>
         <div class="wm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-5.6 7-12a7 7 0 1 0-14 0c0 6.4 7 12 7 12Z"/></svg> Riverton Plumbing</div>
@@ -191,7 +183,7 @@
         <div class="likes">94 likes</div>
         <div class="txt"><b>rivertonplumbing</b> Reviews like this make our day. 🙌 Thank you Sarah! We treat every home like our own — on time, tidy, and done right the first time. ⭐⭐⭐⭐⭐</div>
         <div class="tags">#5starservice #happycustomer #trustedplumber #riverton</div>
-        <div class="note"><b>Why this works:</b> a real review turns a stranger into a customer. We turn your best feedback into clean, scroll-stopping posts.</div>
+        <div class="note"><b>Why this works:</b> a real review over a real handshake photo turns a stranger into a customer — trust you can see.</div>
       </div>
     </div>
 
@@ -202,10 +194,14 @@
         <div class="nm">Riverton Plumbing Co.<span>Sponsored</span></div>
         <div class="dots">···</div>
       </div>
-      <div class="sq">
-        <div class="tip">
-          <span class="top">Pro Tip</span>
+      <div class="sq p3">
+        <div class="top">
+          <div class="photo" style="background-image:url('https://images.pexels.com/photos/7859953/pexels-photo-7859953.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1080')"></div>
+          <div class="scrim"></div>
+          <span class="pill">Pro Tip</span>
           <h3>3 signs your water heater is <em>about to fail</em></h3>
+        </div>
+        <div class="body3">
           <ul>
             <li><span class="n">1</span><span>The water runs lukewarm or takes ages to heat up</span></li>
             <li><span class="n">2</span><span>You hear rumbling or popping from the tank</span></li>
@@ -225,7 +221,7 @@
         <div class="likes">211 likes</div>
         <div class="txt"><b>rivertonplumbing</b> Save this post! 📌 A failing water heater rarely dies without warning. Catch these 3 signs early and you could avoid a cold-shower morning — or a flooded floor. Questions? Drop them below 👇</div>
         <div class="tags">#plumbingtips #waterheater #homemaintenance #diy</div>
-        <div class="note"><b>Why this works:</b> helpful tips get <i>saved and shared</i> — that's free reach, and it positions your client as the local expert people call.</div>
+        <div class="note"><b>Why this works:</b> helpful tips get <i>saved and shared</i> — free reach, and it makes you the local expert people call.</div>
       </div>
     </div>
 
@@ -236,12 +232,14 @@
         <div class="nm">Riverton Plumbing Co.<span>Sponsored</span></div>
         <div class="dots">···</div>
       </div>
-      <div class="sq">
-        <div class="off">
+      <div class="sq p4">
+        <div class="photo" style="background-image:url('https://images.pexels.com/photos/8486975/pexels-photo-8486975.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1080')"></div>
+        <div class="scrim"></div>
+        <div class="inner">
           <div class="tagtop">This month only</div>
           <div class="big">FREE<small>call-out &amp; quote</small></div>
-          <div class="desc">Book any job this October and we'll waive the call-out fee — no surprises, just an honest quote.</div>
-          <div class="pill">📞 Book your slot today</div>
+          <div class="desc">Book any job this month and we'll waive the call-out fee — just an honest quote, no surprises.</div>
+          <div class="pillbtn">📞 Book your slot today</div>
         </div>
         <div class="wm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s7-5.6 7-12a7 7 0 1 0-14 0c0 6.4 7 12 7 12Z"/></svg> Riverton Plumbing</div>
       </div>
@@ -253,9 +251,9 @@
           <svg class="sp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2Z"/></svg>
         </div>
         <div class="likes">156 likes</div>
-        <div class="txt"><b>rivertonplumbing</b> 🚨 October offer! Free call-out and a no-obligation quote on any plumbing job booked this month. Limited slots — message us or call to grab yours before they're gone. ⏳</div>
+        <div class="txt"><b>rivertonplumbing</b> 🚨 This month's offer! Free call-out and a no-obligation quote on any plumbing job booked this month. Limited slots — message us or call to grab yours before they're gone. ⏳</div>
         <div class="tags">#specialoffer #plumbingdeal #booknow #localbusiness</div>
-        <div class="note"><b>Why this works:</b> a clear, time-limited offer gives people a reason to act <i>now</i> instead of "someday" — that's what turns followers into bookings.</div>
+        <div class="note"><b>Why this works:</b> a clear, time-limited offer gives people a reason to act <i>now</i> — that's what turns followers into bookings.</div>
       </div>
     </div>
 
@@ -263,6 +261,7 @@
 
   <div class="foot">
     <p><b>SocialSet Studio</b> — posts written, designed &amp; posted for you, every month. &nbsp;·&nbsp; mieliesvangraan@gmail.com</p>
+    <p style="margin-top:4px;font-size:.72rem">Demo photos via Pexels (free stock). Your posts will use your own job photos &amp; brand.</p>
   </div>
 
 </body>
