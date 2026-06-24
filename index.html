@@ -142,6 +142,21 @@
   .work-grid img{width:100%;height:auto;display:block}
   .work-note{text-align:center;color:var(--muted);font-size:.88rem;margin-top:1.4rem}
 
+  /* MEET */
+  .meet-grid{display:grid;grid-template-columns:.85fr 1fr;gap:3rem;align-items:center}
+  .meet-photo{display:flex;justify-content:center}
+  .meet-panel{position:relative;width:300px;height:380px;border-radius:24px;background:linear-gradient(135deg,var(--navy),var(--navy-deep));overflow:hidden;box-shadow:var(--shadow)}
+  .meet-panel::before{content:"";position:absolute;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(242,106,27,.55),transparent 70%);top:-50px;right:-50px}
+  .meet-panel img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:128%;width:auto;z-index:1}
+  .meet-tag{position:absolute;bottom:16px;left:16px;z-index:2;background:#fff;border-radius:12px;padding:.5rem .8rem;box-shadow:0 10px 24px -10px rgba(0,0,0,.5);font-family:'Poppins';font-weight:700;color:var(--navy);font-size:.85rem;display:flex;align-items:center;gap:.45rem}
+  .meet-tag b{color:var(--orange)}
+  .meet-copy h2{font-size:clamp(1.7rem,3.2vw,2.3rem);color:var(--navy);margin-bottom:1rem}
+  .meet-copy p{color:var(--muted);font-size:1.05rem;margin-bottom:1rem}
+  .meet-copy p b{color:var(--ink)}
+  .meet-sign{font-family:'Poppins';font-weight:700;color:var(--navy);margin-top:.4rem}
+  .meet-sign span{display:block;font-weight:500;color:var(--muted);font-size:.9rem}
+  @media(max-width:900px){.meet-grid{grid-template-columns:1fr;text-align:center}.meet-photo{order:-1}}
+
   /* PRICING */
   .pricing{background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%)}
   .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
@@ -312,6 +327,26 @@
       <figure><img src="assets/work/4.png" alt="Special offer social media post example" loading="lazy" /></figure>
     </div>
     <p class="work-note">Example designs for a demo business. Your posts use your own brand, photos and offers.</p>
+  </div>
+</section>
+
+<!-- MEET ERICK -->
+<section class="meet" id="about-me">
+  <div class="wrap meet-grid">
+    <div class="meet-photo">
+      <div class="meet-panel">
+        <img src="assets/erick.png" alt="Erick, founder of SocialSet Studio" />
+        <div class="meet-tag"><b>●</b> Erick · Founder</div>
+      </div>
+    </div>
+    <div class="meet-copy">
+      <div class="eyebrow">Who's behind it</div>
+      <h2>Hi, I'm Erick 👋</h2>
+      <p>I'm not a faceless agency. I run a hands-on service business myself — so I know exactly how flat-out your days are, and I know what makes a customer actually pick up the phone.</p>
+      <p>That's the difference. I build your social media the way a fellow tradesperson would — <b>real, down-to-earth, and focused on getting you jobs</b> — not over-polished stuff that doesn't sound like you.</p>
+      <p>You stay on the tools. I'll keep your business looking great online.</p>
+      <div class="meet-sign">— Erick<span>Founder, SocialSet Studio</span></div>
+    </div>
   </div>
 </section>
 
