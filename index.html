@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SocialSet Studio — Professional Social Media Setup for Small Businesses</title>
-<meta name="description" content="SocialSet Studio sets up clean, professional Facebook & Instagram business pages for small businesses. Profile & cover design, bio writing, starter posts and a posting plan — done for you, no tech stress." />
+<title>SocialSet Studio — Done-for-you Social Media for Home-Service Businesses</title>
+<meta name="description" content="We run your Facebook & Instagram for you — fresh branded posts every week that keep your home-service business looking busy and bringing in customers. No ads, no effort, cancel anytime." />
 <link rel="icon" type="image/png" href="assets/logo.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -136,6 +136,12 @@
   .card h3{font-size:1.15rem;color:var(--navy);margin-bottom:.3rem}
   .card p{color:var(--muted);font-size:.97rem}
 
+  /* WORK */
+  .work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+  .work-grid figure{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);background:#fff;border:1px solid var(--line)}
+  .work-grid img{width:100%;height:auto;display:block}
+  .work-note{text-align:center;color:var(--muted);font-size:.88rem;margin-top:1.4rem}
+
   /* PRICING */
   .pricing{background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%)}
   .price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:stretch}
@@ -152,7 +158,8 @@
   .price li.off{color:#aab6c4}
   .price li.off::before{content:"–";color:#cdd6e0}
   .price .btn{margin-top:auto;width:100%;justify-content:center}
-  .price-note{text-align:center;color:var(--muted);font-size:.9rem;margin-top:1.6rem}
+  .price-note{text-align:center;color:var(--muted);font-size:.92rem;margin-top:1.6rem}
+  .price-note b{color:var(--navy)}
 
   /* PROCESS */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;counter-reset:step}
@@ -187,6 +194,7 @@
     .hero-card{max-width:420px;margin:0 auto}
     .strip-grid,.price-grid,.steps,.cards{grid-template-columns:1fr}
     .steps{grid-template-columns:repeat(2,1fr)}
+    .work-grid{grid-template-columns:repeat(2,1fr)}
     .price.feat{transform:none}
     .nav-links{display:none}
     .menu-btn{display:block}
@@ -202,10 +210,11 @@
   <div class="wrap nav-inner">
     <a href="#top" class="logo"><img src="assets/logo.png" alt="SocialSet Studio logo" /><span>SocialSet<b>Studio</b></span></a>
     <nav class="nav-links" id="navLinks">
-      <a href="#services">Services</a>
+      <a href="#services">What we do</a>
+      <a href="#work">Our work</a>
       <a href="#pricing">Pricing</a>
       <a href="#process">How it works</a>
-      <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-primary nav-cta">Get Started</a>
+      <a href="mailto:mieliesvangraan@gmail.com?subject=SocialSet%20Studio%20enquiry" class="btn btn-primary nav-cta">Book a free call</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:26px;height:26px"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
   </div>
@@ -215,21 +224,21 @@
 <section class="hero" id="top" style="padding:0">
   <div class="wrap hero-grid">
     <div class="hero-copy">
-      <span class="pill">Facebook &amp; Instagram setup</span>
-      <h1>Make your small business look <em>professional</em> online.</h1>
-      <p class="lead">Empty page? Outdated photos? A bio that says nothing? I set up clean, trustworthy social media pages so customers take you seriously from the very first click — no tech stress, done for you.</p>
+      <span class="pill">Done-for-you social media</span>
+      <h1>We run your Facebook &amp; Instagram <em>for you</em> — so you can run your business.</h1>
+      <p class="lead">For busy home-service businesses — plumbers, electricians, roofers, landscapers. Fresh branded posts every week that keep your page active and your phone ringing. No ads, no effort on your side.</p>
       <div class="hero-cta">
-        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-primary">Get my page sorted →</a>
-        <a href="#pricing" class="btn btn-ghost">See packages</a>
+        <a href="mailto:mieliesvangraan@gmail.com?subject=SocialSet%20Studio%20enquiry" class="btn btn-primary">Book a free intro call →</a>
+        <a href="#pricing" class="btn btn-ghost">See plans</a>
       </div>
       <div class="hero-trust">
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></svg><span><b>Done-for-you</b> setup</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg><span><b>Fast</b> turnaround</span></div>
-        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg><span><b>Plain talk</b>, no tech-speak</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m8 12 2.6 2.6L16 9"/></svg><span><b>Fresh posts</b> every week</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg><span><b>No lock-in</b> — cancel anytime</span></div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-8.5 8.5 8.5 8.5 0 0 1-3.8-.9L3 21l1.9-5.7A8.4 8.4 0 0 1 4 11.5 8.5 8.5 0 0 1 12.5 3 8.4 8.4 0 0 1 21 11.5Z"/></svg><span><b>You stay</b> on the tools</span></div>
       </div>
     </div>
     <div class="hero-card">
-      <div class="mock" role="img" aria-label="Preview of a professionally set up social media business page">
+      <div class="mock" role="img" aria-label="Preview of a professionally managed social media business page">
         <div class="mock-bar"><i></i><i></i><i></i><span class="mock-url">facebook.com/yourbusiness</span></div>
         <div class="mock-cover"></div>
         <div class="mock-head">
@@ -240,7 +249,7 @@
           </svg></div>
           <div class="mock-id">
             <b>Your Business <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a3 3 0 0 1 2.6 1.5 3 3 0 0 1 2.9.8 3 3 0 0 1 .8 2.9A3 3 0 0 1 19.8 10a3 3 0 0 1 0 4 3 3 0 0 1-1.5 2.8 3 3 0 0 1-.8 2.9 3 3 0 0 1-2.9.8A3 3 0 0 1 12 22a3 3 0 0 1-2.6-1.5 3 3 0 0 1-2.9-.8 3 3 0 0 1-.8-2.9A3 3 0 0 1 4.2 14a3 3 0 0 1 0-4 3 3 0 0 1 1.5-2.8 3 3 0 0 1 .8-2.9 3 3 0 0 1 2.9-.8A3 3 0 0 1 12 2Zm-1.2 13.6 5-5-1.4-1.4-3.6 3.6-1.6-1.6-1.4 1.4 3 3Z"/></svg></b>
-            <span>Set up &amp; styled by SocialSet Studio</span>
+            <span>Managed by SocialSet Studio</span>
           </div>
         </div>
         <div class="mock-stats">
@@ -255,7 +264,7 @@
         <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i></div>
         <div class="delta"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg> +218% reach</div>
       </div>
-      <div class="hero-badge"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:18px;height:18px"><path d="m12 3 2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.8 6.7 19l1-5.8-4.2-4.1 5.9-.9L12 3Z"/></svg></span><div>Pages clients are<br/>proud to share</div></div>
+      <div class="hero-badge"><span class="dot"><svg viewBox="0 0 24 24" fill="currentColor" stroke="none" style="width:18px;height:18px"><path d="m12 3 2.6 5.3 5.9.9-4.2 4.1 1 5.8L12 16.8 6.7 19l1-5.8-4.2-4.1 5.9-.9L12 3Z"/></svg></span><div>A page customers<br/>actually trust</div></div>
     </div>
   </div>
 </section>
@@ -264,9 +273,9 @@
 <section class="strip" style="padding:3.4rem 0">
   <div class="wrap">
     <div class="strip-grid">
-      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>People check you online first</h3><p>Most customers look at your social media before they ever call or buy. A blank page plants doubt.</p></div>
-      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 4 2.5 18a1.6 1.6 0 0 0 1.4 2.4h16.2a1.6 1.6 0 0 0 1.4-2.4L13.7 4a1.6 1.6 0 0 0-2.8 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div><h3>A messy page costs you trust</h3><p>Outdated photos and an empty bio make even a great business look uncertain and unprofessional.</p></div>
-      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>You don't have time for this</h3><p>Running a business is enough work. Setting up pages the right way is exactly what I take off your plate.</p></div>
+      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg></div><h3>Customers check you online first</h3><p>Before they call, people look you up. A page that hasn't posted in months makes them wonder if you're still around.</p></div>
+      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 4 2.5 18a1.6 1.6 0 0 0 1.4 2.4h16.2a1.6 1.6 0 0 0 1.4-2.4L13.7 4a1.6 1.6 0 0 0-2.8 0Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg></div><h3>A quiet page loses you jobs</h3><p>When your page looks inactive, the customer calls the competitor who looks busier — even if you do better work.</p></div>
+      <div class="strip-card"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><h3>You don't have time to post</h3><p>You're on the tools all day. Keeping social media going every week is exactly what we take off your plate.</p></div>
     </div>
   </div>
 </section>
@@ -275,16 +284,34 @@
 <section id="services">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">What you get</div>
-      <h2>Everything your page needs, handled for you</h2>
-      <p>One simple package, set up properly the first time — so you just show up looking great.</p>
+      <div class="eyebrow">What you get every month</div>
+      <h2>Your social media, completely handled</h2>
+      <p>You keep doing great work. We keep your pages active, professional and bringing in customers — every single week.</p>
     </div>
     <div class="cards">
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></div><div><h3>Profile &amp; cover design</h3><p>Clean, on-brand profile picture and cover photo that make your page instantly look the part.</p></div></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></div><div><h3>A bio that tells your story</h3><p>Professionally written bio and About section so visitors know exactly who you are and why to trust you.</p></div></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg></div><div><h3>Ready-to-post content</h3><p>3–5 branded starter posts written and designed for you, so your page looks active from day one.</p></div></div>
-      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div><h3>A simple posting plan</h3><p>An easy weekly plan telling you what to post and when — no guessing, no overwhelm.</p></div></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div><div><h3>Fresh posts every week</h3><p>A steady stream of branded posts so your page always looks active — never dead or abandoned.</p></div></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.6"/><path d="m21 15-5-5L5 21"/></svg></div><div><h3>Custom graphics &amp; captions</h3><p>Eye-catching designs and written captions in your brand — job photos, tips, reviews and offers that get noticed.</p></div></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4Z"/></svg></div><div><h3>We post &amp; schedule it all</h3><p>You don't lift a finger. We plan, schedule and publish everything for you — consistently, on time.</p></div></div>
+      <div class="card"><div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17 9 11l4 4 8-8"/><path d="M15 7h6v6"/></svg></div><div><h3>A simple monthly report</h3><p>A plain-English summary of how your pages are doing — reach, growth and what's working. No jargon.</p></div></div>
     </div>
+  </div>
+</section>
+
+<!-- OUR WORK -->
+<section id="work" class="strip">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Our work</div>
+      <h2>Posts we make for businesses like yours</h2>
+      <p>The kind of content we'll be posting on your page every week — built to catch eyes and bring in jobs.</p>
+    </div>
+    <div class="work-grid">
+      <figure><img src="assets/work/1.png" alt="Job-done social media post example" loading="lazy" /></figure>
+      <figure><img src="assets/work/2.png" alt="Customer review social media post example" loading="lazy" /></figure>
+      <figure><img src="assets/work/3.png" alt="Helpful pro-tip social media post example" loading="lazy" /></figure>
+      <figure><img src="assets/work/4.png" alt="Special offer social media post example" loading="lazy" /></figure>
+    </div>
+    <p class="work-note">Example designs for a demo business. Your posts use your own brand, photos and offers.</p>
   </div>
 </section>
 
@@ -292,68 +319,68 @@
 <section class="pricing" id="pricing">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Packages</div>
-      <h2>Simple, affordable pricing</h2>
-      <p>Pick the level that fits your business. Every package is done-for-you and stress-free.</p>
+      <div class="eyebrow">Monthly plans</div>
+      <h2>Simple monthly pricing</h2>
+      <p>Pick the level that fits your business. Every plan is fully done-for-you, with no contracts.</p>
     </div>
     <div class="price-grid">
       <div class="price">
-        <h3>Basic</h3>
-        <p class="sub">Get your page looking professional, fast.</p>
-        <div class="amt">$20<span> once-off</span></div>
+        <h3>Starter</h3>
+        <p class="sub">Keep one page active and looking professional.</p>
+        <div class="amt">$200<span> / month</span></div>
         <ul>
-          <li>Profile &amp; cover design</li>
-          <li>Professionally written bio</li>
-          <li>1 starter post</li>
-          <li class="off">Starter posts pack</li>
-          <li class="off">Weekly content plan</li>
+          <li>8 branded posts per month</li>
+          <li>1 platform (Facebook or Instagram)</li>
+          <li>Custom graphics &amp; captions</li>
+          <li>We post &amp; schedule it all</li>
+          <li class="off">Monthly growth report</li>
         </ul>
-        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-navy">Choose Basic</a>
+        <a href="mailto:mieliesvangraan@gmail.com?subject=SocialSet%20Studio%20-%20Starter%20plan" class="btn btn-navy">Get started</a>
       </div>
       <div class="price feat">
         <span class="tag">Most popular</span>
-        <h3>Standard</h3>
-        <p class="sub">The complete set-up most businesses need.</p>
-        <div class="amt">$45<span> once-off</span></div>
+        <h3>Growth</h3>
+        <p class="sub">Both platforms, posting twice as often.</p>
+        <div class="amt">$350<span> / month</span></div>
         <ul>
-          <li>Profile &amp; cover design</li>
-          <li>Professionally written bio</li>
-          <li>3 branded starter posts</li>
-          <li>Weekly content plan</li>
-          <li class="off">Instagram + Facebook both</li>
+          <li>16 branded posts per month</li>
+          <li>Facebook <b>and</b> Instagram</li>
+          <li>Custom graphics &amp; captions</li>
+          <li>We post &amp; schedule it all</li>
+          <li>Monthly growth report</li>
         </ul>
-        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-primary">Choose Standard</a>
+        <a href="mailto:mieliesvangraan@gmail.com?subject=SocialSet%20Studio%20-%20Growth%20plan" class="btn btn-primary">Get started</a>
       </div>
       <div class="price">
-        <h3>Premium</h3>
-        <p class="sub">Both platforms, fully launch-ready.</p>
-        <div class="amt">$75<span> once-off</span></div>
+        <h3>Pro</h3>
+        <p class="sub">Maximum presence across every channel.</p>
+        <div class="amt">$600<span> / month</span></div>
         <ul>
-          <li>Everything in Standard</li>
-          <li>Facebook <b>and</b> Instagram setup</li>
-          <li>5 branded starter posts</li>
-          <li>Pages linked &amp; ready to grow</li>
-          <li>Priority delivery</li>
+          <li>24 branded posts per month</li>
+          <li>Facebook, Instagram &amp; Google Business</li>
+          <li>Review &amp; lead-generating posts</li>
+          <li>Custom graphics &amp; captions</li>
+          <li>Monthly report + priority support</li>
         </ul>
-        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-navy">Choose Premium</a>
+        <a href="mailto:mieliesvangraan@gmail.com?subject=SocialSet%20Studio%20-%20Pro%20plan" class="btn btn-navy">Get started</a>
       </div>
     </div>
-    <p class="price-note">All packages are ordered securely through Fiverr — payment protected, satisfaction guaranteed.</p>
+    <p class="price-note">One-time <b>$150 setup</b> — <b>waived</b> when you start a 3-month plan. No contracts, cancel anytime.</p>
   </div>
 </section>
 
 <!-- PROCESS -->
-<section id="process" class="strip" style="padding:4.4rem 0">
+<section id="process">
   <div class="wrap">
     <div class="sec-head">
       <div class="eyebrow">How it works</div>
-      <h2>From empty page to professional in 4 steps</h2>
+      <h2>Up and running in 4 easy steps</h2>
     </div>
     <div class="steps">
-      <div class="step"><div class="num"></div><h3>Place your order</h3><p>Pick a package and send me a few quick details about your business.</p></div>
-      <div class="step"><div class="num"></div><h3>I build it</h3><p>I design your profile, cover, bio and posts — all in your brand.</p></div>
-      <div class="step"><div class="num"></div><h3>You review</h3><p>I send it over for your approval and tweak anything you'd like changed.</p></div>
-      <div class="step"><div class="num"></div><h3>Go live</h3><p>Your page is set up and ready — a page you'll be proud to share.</p></div>
+      <div class="step"><div class="num"></div><h3>Quick intro chat</h3><p>We have a short call to learn about your business and what you want from your pages.</p></div>
+      <div class="step"><div class="num"></div><h3>We build your plan</h3><p>We set up your content plan and design your first batch of branded posts for approval.</p></div>
+      <div class="step"><div class="num"></div><h3>We post every week</h3><p>Sit back — we publish fresh, on-brand content consistently while you focus on the work.</p></div>
+      <div class="step"><div class="num"></div><h3>You get a report</h3><p>Each month you get a simple summary of how your pages are growing. Cancel anytime.</p></div>
     </div>
   </div>
 </section>
@@ -361,11 +388,11 @@
 <!-- CTA -->
 <section class="cta">
   <div class="wrap">
-    <h2>Ready to look the part online?</h2>
-    <p>Let's get your business a clean, professional page that turns visitors into customers. Simple, affordable, and completely done for you.</p>
+    <h2>Too busy to post? Let us handle it.</h2>
+    <p>Keep your business looking busy and bringing in customers — without spending a minute on social media yourself.</p>
     <div class="hero-cta" style="justify-content:center">
-      <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener" class="btn btn-navy">Get started on Fiverr →</a>
-      <a href="mailto:mieliesvangraan@gmail.com" class="btn btn-ghost">Email me a question</a>
+      <a href="mailto:mieliesvangraan@gmail.com?subject=SocialSet%20Studio%20enquiry" class="btn btn-navy">Book a free intro call →</a>
+      <a href="offer.html" class="btn btn-ghost">See the full offer</a>
     </div>
   </div>
 </section>
@@ -376,18 +403,20 @@
     <div class="foot-grid">
       <div class="foot-brand">
         <a href="#top" class="logo"><img src="assets/logo.png" alt="SocialSet Studio" style="height:34px" /><span>SocialSet<b style="color:var(--orange)">Studio</b></span></a>
-        <p>Clean, professional Facebook &amp; Instagram pages for small businesses. No tech stress — done for you.</p>
+        <p>Done-for-you Facebook &amp; Instagram management for home-service businesses. Fresh posts every week — no effort on your side.</p>
       </div>
       <div class="foot-col">
         <h4>Explore</h4>
-        <a href="#services">Services</a>
+        <a href="#services">What we do</a>
+        <a href="#work">Our work</a>
         <a href="#pricing">Pricing</a>
         <a href="#process">How it works</a>
       </div>
       <div class="foot-col">
         <h4>Get in touch</h4>
-        <a href="https://www.fiverr.com/s/BRQX6z5" target="_blank" rel="noopener">Order on Fiverr</a>
-        <a href="mailto:mieliesvangraan@gmail.com">Email me</a>
+        <a href="offer.html">See the full offer</a>
+        <a href="samples.html">Sample posts</a>
+        <a href="mailto:mieliesvangraan@gmail.com">Email us</a>
       </div>
     </div>
     <div class="foot-bottom">© 2026 SocialSet Studio. All rights reserved.</div>
